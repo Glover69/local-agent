@@ -1,0 +1,27 @@
+export type SendBlueWebhookPayload = {
+    accountEmail: string;
+    content: string;
+    is_outbound: boolean;
+    status: "RECEIVED" | string;
+    error_code: string | null;
+    error_message: string | null;
+    error_reason: string | null;
+    message_handle: string;
+    date_sent: string;
+    date_updated: string;
+    from_number: string;
+    number: string;
+    to_number: string;
+    was_downgraded: boolean | null;
+    plan: string;
+    media_url: string;
+    message_type: string;
+    group_id: string;
+    participants: string[];
+    send_style: string;
+    opted_out: boolean;
+    error_detail: string | null;
+    sendblue_number: string;
+    service: string;
+    group_display_name: string | null;
+};
