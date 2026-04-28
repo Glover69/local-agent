@@ -30,7 +30,7 @@ export async function startUp(port: number){
         console.log(webhook.message);
 
         // Load up model for use (Just for testing)
-        const model = await lmClient.llm.model("qwen3.5-4b-mlx-vlm-nvfp4");
+        const model = await lmClient.llm.model("gemma-4-e2b-it-mlx");
 
         if(!model){
             console.log("Could not load model");

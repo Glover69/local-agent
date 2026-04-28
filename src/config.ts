@@ -17,5 +17,10 @@ export const config = {
     composioAPIKey: required("COMPOSIO_API_KEY"),
     ngRokToken: required("NGROK_TOKEN"),
     lmAPIToken: required("LM_API_TOKEN"),
+    convex: {
+        deployment: required("CONVEX_DEPLOYMENT"),
+        url: required("CONVEX_URL"),
+        siteUrl: required("CONVEX_SITE_URL"),
+    }
 
 };
