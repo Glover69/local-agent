@@ -1,7 +1,9 @@
 import ngrok from '@ngrok/ngrok';
 import {SendblueAPI} from "sendblue";
+import {LMStudioClient} from "@lmstudio/sdk";
 
 const ngrokToken = process.env['NGROK_TOKEN'];
+const lmClient = new LMStudioClient();
 
 export async function startUp(port: number){
     // Programmatically kill any existing tunnels before running
@@ -26,6 +28,16 @@ export async function startUp(port: number){
 
         const webhook = await client.webhooks.update({webhooks: {"receive": [`${listener}/api/messaging/webhook`],}});
         console.log(webhook.message);
+
+        // Load up model for use (Just for testing)
+        const model = await lmClient.llm.model("qwen3.5-4b-mlx-vlm-nvfp4");
+
+        if(!model){
+            console.log("Could not load model");
+        }
+
+        console.log(`Successfully loaded ${model.displayName}`);
+
     } else {
         console.log("Could not start up ngrok server...");
     }

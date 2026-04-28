@@ -4,6 +4,7 @@
     "dev": "bun run src/index.ts"
   },
   "dependencies": {
+    "@lmstudio/sdk": "^1.5.0",
     "@ngrok/ngrok": "^1.7.0",
     "hono": "^4.12.15",
     "sendblue": "^3.8.0"
